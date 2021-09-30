@@ -1,4 +1,6 @@
-﻿using CoreBlog.Models;
+﻿using BusinessLayer.Concrete;
+using CoreBlog.Models;
+using DataLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -18,9 +20,12 @@ namespace CoreBlog.Controllers
             _logger = logger;
         }
 
+        BlogManager bm = new BlogManager(new EfBlogRepository());
+
         public IActionResult Index()
         {
-            return View();
+            var values = bm.GetBlogListWithCategory();
+            return View(values);
         }
 
         public IActionResult Privacy()

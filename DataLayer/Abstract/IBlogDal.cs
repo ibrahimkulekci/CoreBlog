@@ -16,6 +16,8 @@ namespace DataLayer.Abstract
         //Blog GetById(int id);
         //27.09.2021 14:32//
 
+        List<Blog> GetListWithCategory(); //Sadece bloglara özel olduğu için burada tanımlandı.
+
 
     }
 }
