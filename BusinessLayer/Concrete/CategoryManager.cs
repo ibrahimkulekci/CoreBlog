@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataLayer.Abstract;
 using DataLayer.EntityFramework;
 using DataLayer.Repositories;
 using EntityLayer.Concrete;
@@ -15,36 +16,50 @@ namespace BusinessLayer.Concrete
         //GenericRepository<Category> repo = new GenericRepository<Category>();
         //27.09.2021 15:30
 
-        EfCategoryRepository efCategoryRepository;
+        //EfCategoryRepository efCategoryRepository;
+        //27.09.2021 16:05        
 
-        public CategoryManager()
+        //public CategoryManager()
+        //{
+        //    efCategoryRepository = new EfCategoryRepository();
+        //}
+        //27.09.2021 16:05
+
+        ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
         {
-            efCategoryRepository = new EfCategoryRepository();
+            _categoryDal = categoryDal;
         }
 
         public void AddCategory(Category p)
         {
-            efCategoryRepository.Insert(p);
+            //efCategoryRepository.Insert(p);
+            _categoryDal.Insert(p);
         }
 
         public void DeleteCategory(Category p)
         {
-            efCategoryRepository.Delete(p);
+            //efCategoryRepository.Delete(p);
+            _categoryDal.Delete(p);
         }
 
         public Category GetById(int id)
         {
-            return efCategoryRepository.GetById(id);
+            //return efCategoryRepository.GetById(id);
+            return _categoryDal.GetById(id);
         }
 
         public List<Category> GetList()
         {
-            return efCategoryRepository.GetListAll();
+            //return efCategoryRepository.GetListAll();
+            return _categoryDal.GetListAll();
         }
 
         public void UpdateCategory(Category p)
         {
-            efCategoryRepository.Update(p);
+            //efCategoryRepository.Update(p);
+            _categoryDal.Update(p);
         }
     }
 }

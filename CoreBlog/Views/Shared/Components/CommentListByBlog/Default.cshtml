@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
+<h2 class="comments-title">
+    Yorumlar
+</h2>
+
+<ol class="comment-list">
+    @if (Model.Count() == 0)
+    {
+        <p> Bu blogda henüz yorum yapılmadı. İlk yorumu siz yazın..</p>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+
+
+            <li id="comment-2" class="comment even thread-even depth-1">
+                <article id="div-comment-2" class="comment-body">
+                    <footer class="comment-meta">
+                        <div class="comment-author vcard">
+                            <img alt="" src="https://secure.gravatar.com/avatar/d7a973c7dab26985da5f961be7b74480?s=32&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/d7a973c7dab26985da5f961be7b74480?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy">
+                            <b class="fn">
+                                <a href="#" rel="external nofollow ugc" class="url">@item.CommentUsername</a>
+                            </b>
+                            <span class="says">says:</span>
+                        </div><!-- .comment-author -->
+
+                        <div class="comment-metadata">
+                            <a href="#">
+                                <time datetime="2021-03-08T07:07:49+00:00">@(((DateTime)item.CommentCreateDate).ToString("dd.MM.yyyy"))</time>
+                            </a>
+                        </div><!-- .comment-metadata -->
+
+                    </footer><!-- .comment-meta -->
+
+                    <div class="comment-content">
+                        <p>
+                            @item.CommentContent
+                        </p>
+                    </div><!-- .comment-content -->
+                </article><!-- .comment-body -->
+            </li><!-- #comment-## -->
+        }
+    }
+</ol>
