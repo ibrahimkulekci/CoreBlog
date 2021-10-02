@@ -24,19 +24,19 @@
                             <label>Ad Soyad:</label>
                             @*<input type="text" name="WriterName">*@
                             @Html.TextBoxFor(x => x.WriterName)
-                            @Html.ValidationMessageFor(x => x.WriterName, null, new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(x => x.WriterName, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-input">
                             <label>E-mail: </label>
                             @*<input type="email" name="WriterMail">*@
                             @Html.TextBoxFor(x => x.WriterMail)
-                            @Html.ValidationMessageFor(x => x.WriterMail, null, new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(x => x.WriterMail, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-input">
                             <label>Şifre:</label>
                             @*<input type="password" name="WriterPassword">*@
                             @Html.PasswordFor(x => x.WriterPassword)
-                            @Html.ValidationMessageFor(x => x.WriterPassword, null, new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(x => x.WriterPassword, "", new { @class = "text-danger" })
                             <label>Şifre(Tekrar):</label>
                             <input type="password" name="WriterPasswordConfirm">
                         </div>

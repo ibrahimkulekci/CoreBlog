@@ -37,10 +37,10 @@ namespace CoreBlog.Controllers
             {
                 foreach (var item in result.Errors)
                 {
-                    ModelState.AddModelError(item.ErrorCode, item.ErrorMessage);
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
-            return View();
+            return View(p);
         }
     }
 }
