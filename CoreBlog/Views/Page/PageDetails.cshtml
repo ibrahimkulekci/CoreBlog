@@ -1,0 +1,22 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Page>
+    @{
+        ViewData["Title"] = "PageDetails";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <section class="w3l-contact-2 py-5">
+        <div class="container py-lg-5 py-md-4 ContactSection">
+            @foreach (var item in Model)
+            {
+                <h3 class="section-title-left">@item.PageTitle</h3>
+                <div class="contact-grids d-grid">
+
+                    <div class="contact-left">
+                        @item.PageContent
+                    </div>
+
+                </div>
+            }
+        </div>
+    </section>
+

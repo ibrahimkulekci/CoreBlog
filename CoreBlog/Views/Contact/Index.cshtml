@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="w3l-contact-2 py-5">
+    <div class="container py-lg-5 py-md-4 ContactSection">
+        <h3 class="section-title-left">İletişim</h3>
+        <div class="contact-grids d-grid">
+
+            <div class="contact-left">
+                <h3 class="mb-3">Bize Yazın</h3>
+                <p>Buraya iletişim sayfası için açıklama gelecek.</p>
+                <div class="cont-details">
+
+                    <div class="cont-top margin-up">
+                        <div class="cont-left text-center">
+                            <span class="fa fa-map-marker"></span>
+                        </div>
+                        <div class="cont-right">
+                            <h6>Adres</h6>
+                            <p>İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+
+                    <div class="cont-top margin-up">
+                        <div class="cont-left text-center">
+                            <span class="fa fa-phone"></span>
+                        </div>
+                        <div class="cont-right">
+                            <h6>Telefon</h6>
+                            <p>
+                                <a href="tel:+(12)234-11-2446">
+                                    +(12)234-11-2446
+                                </a>,
+                                <a href="tel:+(12)234-11-4455" class="ml-2">
+                                    +(12)234-11-4455
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="cont-top margin-up">
+                        <div class="cont-left text-center">
+                            <span class="fa fa-envelope-o"></span>
+                        </div>
+                        <div class="cont-right">
+                            <h6>E-mail</h6>
+                            <p>
+                                <a href="mailto:mail@example.com" class="mail">
+                                    mail@example.com
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="contact-right ContactForm">
+                <form method="post" class="signin-form">
+                    <div class="input-grids">
+                        <input type="text" name="ContactUsername" placeholder="Ad Soyad" class="contact-input" required="">
+
+                        <input type="email" name="ContactMail" placeholder="E-mail" class="contact-input" required="">
+
+                        <input type="text" name="ContactSubject" placeholder="Konu" class="contact-input" required="">
+                    </div>
+                    <div class="form-input">
+                        <textarea name="ContactMessage" placeholder="Mesajınız.." required=""></textarea>
+                    </div>
+                    <button class="btn btn-style btn-outline">Gönder</button>
+                    
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+

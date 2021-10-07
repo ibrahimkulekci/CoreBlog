@@ -91,9 +91,10 @@
 
 
                     <!-- .entry-content -->
-
                     @*@await Html.PartialAsync("~/Views/Comment/BlogDetailsAddComment.cshtml")*@
                     @await Component.InvokeAsync("CommentListByBlog", new { id = ViewBag.id })
+
+                    @await Html.PartialAsync("~/Views/Comment/BlogDetailsAddComment.cshtml")
 
                 </div>
             </div>
