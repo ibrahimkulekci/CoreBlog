@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IPageService
+    public interface IPageService: IGenericService<Page>
     {
-        List<Page> GetList();
+        //List<Page> GetList();
         List<Page> GetPageByID(int id);
     }
 }

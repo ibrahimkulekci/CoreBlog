@@ -13,52 +13,34 @@ namespace BusinessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        //GenericRepository<Category> repo = new GenericRepository<Category>();
-        //27.09.2021 15:30
-
-        //EfCategoryRepository efCategoryRepository;
-        //27.09.2021 16:05        
-
-        //public CategoryManager()
-        //{
-        //    efCategoryRepository = new EfCategoryRepository();
-        //}
-        //27.09.2021 16:05
-
         ICategoryDal _categoryDal;
-
         public CategoryManager(ICategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
         }
 
-        public void AddCategory(Category p)
+        public Category TGetById(int id)
         {
-            //efCategoryRepository.Insert(p);
-            _categoryDal.Insert(p);
-        }
-
-        public void DeleteCategory(Category p)
-        {
-            //efCategoryRepository.Delete(p);
-            _categoryDal.Delete(p);
-        }
-
-        public Category GetById(int id)
-        {
-            //return efCategoryRepository.GetById(id);
             return _categoryDal.GetById(id);
         }
 
         public List<Category> GetList()
         {
-            //return efCategoryRepository.GetListAll();
             return _categoryDal.GetListAll();
         }
 
-        public void UpdateCategory(Category p)
+        public void TAdd(Category p)
         {
-            //efCategoryRepository.Update(p);
+            _categoryDal.Insert(p);
+        }
+
+        public void TDelete(Category p)
+        {
+            _categoryDal.Delete(p);
+        }
+
+        public void TUpdate(Category p)
+        {
             _categoryDal.Update(p);
         }
     }

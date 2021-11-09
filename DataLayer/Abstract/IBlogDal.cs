@@ -18,6 +18,7 @@ namespace DataLayer.Abstract
 
         List<Blog> GetListWithCategory(); //Sadece bloglara özel olduğu için burada tanımlandı.
 
+        List<Blog> GetListWithCategoryByWriter(int id);
 
     }
 }

@@ -27,5 +27,25 @@ namespace BusinessLayer.Concrete
         {
             return _pageDal.GetListAll();
         }
+
+        public void TAdd(Page p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TDelete(Page p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(Page p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Page TGetById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
