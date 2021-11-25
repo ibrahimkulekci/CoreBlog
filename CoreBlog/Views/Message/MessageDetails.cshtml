@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Message2
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Blog Detay: @Model.Subject</h4>
+
+                @Html.Label("Mesaj ID")
+                @Html.TextBoxFor(x => x.MessageID, new { @class = "form-control", disabled = "disabled" })
+                <br />
+                @Html.Label("Mesaj Gönderen")
+                @Html.TextBoxFor(x => x.SenderID, new { @class = "form-control", disabled = "disabled" })
+                <br />
+                @Html.Label("Mesaj Başlığı")
+                @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", disabled = "disabled" })
+                <br />
+                @Html.Label("Mesaj İçeriği")
+                @Html.TextAreaFor(x => x.MessageDetails, 20, 3, new { @class = "form-control", disabled = "disabled" })
+                <br />
+                <br />
+                <a href="~/Message/Inbox" class="btn btn-dark btn-sm">Mesajlara Geri Dön</a>
+            </div>
+        </div>
+    </div>
+</div>
+

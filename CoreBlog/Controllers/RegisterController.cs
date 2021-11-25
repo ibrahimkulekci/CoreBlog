@@ -30,7 +30,7 @@ namespace CoreBlog.Controllers
                 p.WriterStatus = true;
                 p.WriterAbout = "Hakkımda yazısı gelecek.";
                 p.WriterImage = "/assets/images/author.jpg";
-                wm.WriterAdd(p);
+                wm.TAdd(p);
                 return RedirectToAction("Index", "Home");
             }
             else

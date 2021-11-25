@@ -28,8 +28,6 @@ namespace CoreBlog
         {
             services.AddControllersWithViews();
 
-            services.AddSession();
-
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()
@@ -40,8 +38,8 @@ namespace CoreBlog
 
             services.AddMvc();
             services.AddAuthentication(
-                CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(x =>
+                CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+                x =>
                     {
                         x.LoginPath = "/Login/Index";
                     }
@@ -65,16 +63,18 @@ namespace CoreBlog
             app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseAuthentication();
-            app.UseSession();
-
             app.UseRouting();
+
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
